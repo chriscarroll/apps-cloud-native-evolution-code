@@ -2,14 +2,14 @@ package com.example.billing;
 
 import org.springframework.web.client.RestTemplate;
 
-public class Client {
+public class BillingClient {
 
     private final RestTemplate restTemplate;
     private final String serviceEndpoint;
 
-    public Client(String serviceEndpoint) {
-        this.restTemplate = new RestTemplate();
-        this.serviceEndpoint = serviceEndpoint;
+    public BillingClient(RestTemplate template, String endpoint) {
+        this.restTemplate = template;
+        this.serviceEndpoint = endpoint;
     }
 
     public void billUser(String userId, int amount) {

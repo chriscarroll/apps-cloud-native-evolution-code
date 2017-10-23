@@ -1,14 +1,6 @@
 server:
   port: 8080
 
-#logging:
-#  level:
-#    root: DEBUG
-
-security:
-  basic:
-    enabled: false
-
+serviceEndpoint: //billing
 #serviceEndpoint: http://localhost:8081
-serviceEndpoint: http://billing
 #serviceEndpoint: http://billing-undwindling-prefect.apps.cumuluslabs.io

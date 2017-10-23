@@ -1,11 +1,10 @@
 package com.example.ums.subscriptions;
 
-import com.example.billing.Client;
+import com.example.billing.BillingClient;
 import com.example.email.SendEmail;
 import com.example.subscriptions.CreateSubscription;
 import com.example.subscriptions.Subscription;
 import com.example.subscriptions.SubscriptionRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,13 +18,13 @@ import java.util.Map;
 @RequestMapping("/subscriptions")
 public class Controller {
 
-    private final Client billingClient;
+    private final BillingClient billingClient;
 
-    @Autowired
-    SubscriptionRepository subscriptions;
+    private SubscriptionRepository subscriptions;
 
-    public Controller(@Autowired Client client) {
-        this.billingClient = client;
+    public Controller(BillingClient billingClient, SubscriptionRepository subscriptions) {
+        this.billingClient = billingClient;
+        this.subscriptions = subscriptions;
     }
 
     @RequestMapping(method = RequestMethod.GET)
