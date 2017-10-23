@@ -1,2 +1,5 @@
 server:
   port: 8080
+
+#serviceEndpoint: http://localhost:8081
+serviceEndpoint: http://billing-undwindling-prefect.apps.cumuluslabs.io
